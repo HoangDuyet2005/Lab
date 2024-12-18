@@ -27,27 +27,33 @@ class KMeans:
         return tam_cum_moi
     def KM(self,du_lieu):
         self.tam_cum=self.khoi_tao_tam_cum(du_lieu)#khởi tạo tâm cụm ngẫu nhiên từ dl
-        self.dem=0
+        #self.dem=0
         for i in range(self.so_lan_lap_max):
             self.nhan= self.gan_nhan(du_lieu)#gán nhãn cho mỗi điểm dl
             tam_cum_moi=self.cap_nhat_tam_cum(du_lieu)#update tâm cụm
-            self.dem+=1
+            #self.dem+=1
             if np.linalg.norm(self.tam_cum- tam_cum_moi)<self.sai_so:#so sánh(điều kiện dừng)
                 break
-            self.tam_cum=tam_cum_moi  
+            self.tam_cum=tam_cum_moi
+        self.dem=i+1
     def lay_tam_cum(self):
         return self.tam_cum#lấy tâm cụm hiện tại
     def lay_nhan(self):
         return self.nhan#lấy nhãn hiện tại
     def lay_dem(self):
         return self.dem#lấy số lần lặp
-if __name__=="__main__":
-    file="C:/Users/LENOVO/Lab601ML/Iris.csv"
+def doc_flie(tendulieu):
+    file=tendulieu+'.csv'
     du_lieu=pd.read_csv(file)
-    i=du_lieu.iloc[:, 1:-1].values #bỏ cột id, cột species
-    kmeans=KMeans(so_cum=3)
+    thuoc_tinh=du_lieu.iloc[:,:-1].values #bỏ cột nhãn
+    lay_nhan=np.array(du_lieu.iloc[:,-1].values)#lấy nhãn
+    so_cum=len(np.unique(lay_nhan))#lấy số cụm
+    return so_cum,thuoc_tinh
+if __name__=="__main__":
+    socum,thuoctinh=doc_flie('Iris')
+    kmeans=KMeans(so_cum=socum)
     tg_bat_dau=time.time() #tg bắt đầu
-    kmeans.KM(i)
+    kmeans.KM(thuoctinh)
     tg_ket_thuc=time.time() #tg kết thúc
     print("Toạ độ tâm cụm")
     print(kmeans.lay_tam_cum())
