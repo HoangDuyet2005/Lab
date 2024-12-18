@@ -23,17 +23,17 @@
 * Đảm bảo đường dẫn file dữ liệu trong mã đúng với vị trí dữ liệu
 ## 4. Sử dụng
 * Tải tệp dữ liệu Iris
-        * Tệp dữ liệu được đọc từ tệp CSV với đường dẫn trong mã.
-        * Đảm bảo đường dẫn tới tệp Iris.csv trong biến file là chính xác.
+    * Tệp dữ liệu được đọc từ tệp CSV với đường dẫn trong mã.
+    * Đảm bảo đường dẫn tới tệp Iris.csv trong biến file là chính xác.
 * Chạy chương trình
     * Chương trình được chạy bằng cách thực thi file Python:
-        ```
-        python <ten_file>.py
-        ```
-    * Kết quả bao gồm:
-        * Tọạ độ tâm cụm sau khi phân cụm.
-        * Nhãn của từng điểm dữ liệu.
-        * Thời gian chạy thuật toán.
-        * Số lần lặp.
+     ```
+    python <ten_file>.py
+    ```
+* Kết quả bao gồm:
+    * Tọạ độ tâm cụm sau khi phân cụm.
+    * Nhãn của từng điểm dữ liệu.
+    * Thời gian chạy thuật toán.
+    * Số lần lặp.
 
 ![alt text](<Screenshot 2024-12-18 204313-1.png>)
