@@ -35,5 +35,5 @@
         * Nhãn của từng điểm dữ liệu.
         * Thời gian chạy thuật toán.
         * Số lần lặp.
-        
-![alt text](image-1.png)
+
+![alt text](<Screenshot 2024-12-18 204313-1.png>)
