@@ -45,10 +45,10 @@ class KMeans:
 def doc_flie(tendulieu):
     file=tendulieu+'.csv'
     du_lieu=pd.read_csv(file)
-    thuoc_tinh=du_lieu.iloc[:,:-1].values #bỏ cột nhãn
+    thuoctinh=du_lieu.iloc[:,:-1].values #bỏ cột nhãn
     lay_nhan=np.array(du_lieu.iloc[:,-1].values)#lấy nhãn
-    so_cum=len(np.unique(lay_nhan))#lấy số cụm
-    return so_cum,thuoc_tinh
+    socum=len(np.unique(lay_nhan))#lấy số cụm
+    return socum,thuoctinh
 if __name__=="__main__":
     socum,thuoctinh=doc_flie('Iris')
     kmeans=KMeans(so_cum=socum)
