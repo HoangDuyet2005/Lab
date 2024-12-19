@@ -16,7 +16,7 @@ class KMeans:
         nhan=[]
         for i in du_lieu:#kc ơ cờ lít giữa các điểm và tâm cụm
             khoang_cach=np.linalg.norm(i-self.tam_cum, axis=1)
-            nhan.append(np.argmin(khoang_cach))#chọn tâm cụm
+            nhan.append(np.argmin(khoang_cach))#chọn tâm cụm,hán nhãn của cụm gần nhất cho điểm dữ liệu.
         return np.array(nhan)
     def cap_nhat_tam_cum(self,du_lieu): #cập nhật kiểm tra lại tâm cụm
         tam_cum_moi=np.zeros((self.so_cum,du_lieu.shape[1]))
